@@ -7,7 +7,82 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      </head>
      <body>
-         <h1 >OCR Engines!!!</h1>
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                  <img src="https://store-images.s-microsoft.com/image/apps.4294.13510798886736958.a650f2a3-9e4d-4aeb-8aff-d1ce5d232c80.cf7f9fcd-4d78-4d3f-8a03-98ed771f89c1" width="30" height="30" class="d-inline-block align-top" alt="">
+                  Ocr Engine
+                </a>              
+            </nav>
+            <div class="container-fluid" >
+                <div class="row">
+                      <div class="col-8">
+                              <div class="input-group mb-3">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+                                      </div>
+                                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                      </div>
+                      <div class="col-4">
+                          <button type="button" class="btn btn-outline-success"  type="submit" onclick="location.href='{%url 'UploadFile'%}'">Upload</button>
+                          <p>
+                            {% if data %}
+                            {{data}}
+                            {% endif %}    
+                          </p>
+                      </div>   
+                </div>
+                      
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                      <div class="col-sm-6">
+                              <img src="3-2memo.jpeg" alt="No Image Sorry!!!" class="rounded" >
+                            </div>
+                            <div class="col-sm-6">
+                                  <div class="media">
+                                      <div class="media-body">
+                                        <h5 class="mt-0">Tesseract Output</h5>
+                                        <!-- <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                        <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p> -->
+                                        <p>
+                                            {% if data1 %}
+                                            {{data1}} 
+                                            {% endif %} 
+                                        </p>
+                                      </div>
+                                  </div>
+                            </div>
+                </div>
+                
+            </div>
+
+
+            <!-- <div>
+                <div class="container">
+                    <div>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="location.href='{%url 'UploadFile'%}'">UploadFile</button>
+                        {% if data %}
+                        {{data}}
+                        {% endif %}
+                    </div>   
+                    <div>
+                            
+                    </div>                
+                </div>                   
+            </div>
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                       <img src="3-2memo.jpeg" alt="No Image Sorry!!!"/>
+                  </div>
+                  <div class="col-sm">
+                    One of three columns
+                   </div>
+                </div>
+            </div>  -->
+            
+         <!-- <h1 >OCR Engines!!!</h1>
          <div>
              <button class="btn btn-primary" onclick="location.href='{%url 'UploadFile'%}'">UploadFile!</button>
              {% if data %}
@@ -23,6 +98,6 @@
                 {{data1}} 
                 {% endif %} 
              </textarea>
-         </div>
+         </div> -->
      </body>
  </html>
