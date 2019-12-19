@@ -1,4 +1,5 @@
 {% load static %}
+{% static "img" as <baseUrl> %}
 <!DOCTYPE html>
  <html>
      <head><title>Ocr Engine</title>
@@ -14,6 +15,9 @@
                   Ocr Engine
                 </a>              
             </nav>
+            <br>
+            <br>
+            
             <div class="container-fluid" >
                 <div class="row">
                       <div class="col-8">
@@ -38,7 +42,7 @@
             <div class="container-fluid">
                 <div class="row">
                       <div class="col-sm-6">
-                              <img  alt="No Image Sorry!!!" class="rounded" >
+                              <!-- <img src={{imageData}}  alt="No Image Sorry!!!" class="rounded" > -->
                             </div>
                             <div class="col-sm-6">
                                   <div class="media">
@@ -59,46 +63,6 @@
             </div>
 
 
-            <!-- <div>
-                <div class="container">
-                    <div>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="location.href='{%url 'UploadFile'%}'">UploadFile</button>
-                        {% if data %}
-                        {{data}}
-                        {% endif %}
-                    </div>   
-                    <div>
-                            
-                    </div>                
-                </div>                   
-            </div>
-            <div class="container">
-                <div class="row">
-                  <div class="col-sm">
-                       <img src="3-2memo.jpeg" alt="No Image Sorry!!!"/>
-                  </div>
-                  <div class="col-sm">
-                    One of three columns
-                   </div>
-                </div>
-            </div>  -->
-            
-         <!-- <h1 >OCR Engines!!!</h1>
-         <div>
-             <button class="btn btn-primary" onclick="location.href='{%url 'UploadFile'%}'">UploadFile!</button>
-             {% if data %}
-             {{data}}
-             {% endif %}
-         </div>
-         <br/>
-         <div>
-            <button class="btn btn-primary" onclick="location.href='{%url 'TesseractClicked'%}'">Get Tesseract Results</button>
-
-            <textarea width='600' height='600'>
-                {% if data1 %}
-                {{data1}} 
-                {% endif %} 
-             </textarea>
-         </div> -->
+          
      </body>
  </html>
