@@ -1,0 +1,33 @@
+{% extends "Template.html" %} {% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div style="width: 500px; height: auto;">
+                <div class="card bg-light mb-3" style="max-width: 30rem;">
+                    <div class="card-header text-center"><b>Welcome To OCR World</b></div>
+                    <form method="POST">
+                        <div class="card-body">
+                            <div>
+                                {% csrf_token %}
+                                <input type="file" id="file-input" name="document">
+                            </div>
+                            <br>
+                            <br>
+                            <div>
+                                <button class="btn btn-outline-success btn-sm btn-block" type="submit" onclick="location.href='{%url 'UploadFile'%}'">Upload</button>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
