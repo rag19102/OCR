@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/jcrop/dist/jcrop.css">
+    <script src="https://unpkg.com/jcrop"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <img src="SrikarID.jpg" id="target">
+    <br>
+    <br>
+    <input type="text" name="Height" id="Height">Height</input>
+    <br>
+    <br>
+    <input type="text" name="width" id="width">width</input>
+    <br>
+    <br>
+    <input type="text" name="X position" id="Xposition">X position</input>
+    <br>
+    <br>
+    <input type="text" name="y position" id="yposition">y position</input>
+    <br>
+    <br>
+    <button type="button" name="getPositions" id="GetPositions" onclick="GetPositions();">Click Me</button>
+
+
+    <script>
+        Jcrop.attach('target', {
+            shadeColor: 'red',
+            multi: true
+        });
+        const stage = Jcrop.attach('target');
+        console.log(stage.active.pos);
+
+        function GetPositions() {
+
+            document.getElementById("Height").value = stage.active.pos.h;
+            document.getElementById("width").value = stage.active.pos.w;
+            document.getElementById("Xposition").value = stage.active.pos.x;
+            document.getElementById("yposition").value = stage.active.pos.y;
+
+        }
+    </script>
+
+</body>
+
+</html>
