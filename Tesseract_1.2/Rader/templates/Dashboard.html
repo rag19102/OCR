@@ -20,19 +20,33 @@
                             <div>
                                 {% if data %}
                                 <input type="text" name="imagename" value={{url}} readonly>
+                                <img src={{path}} id="target" height="200" width="200">
                                 <h5 class="text-success text-uppercase">{{data}}</h5>
                                 <button class="btn btn-outline-primary btn-sm btn-block" type="submit" onclick="location.href='{%url 'UploadFile'%}'" name="GetText">GetText</button> {% endif %}
                             </div>
-
                         </div>
                     </form>
-
                 </div>
-
             </div>
         </div>
     </div>
 </div>
+<script>
+    Jcrop.attach('target', {
+        shadeColor: 'red',
+        multi: true
+    });
+    const stage = Jcrop.attach('target');
+    console.log(stage.active.pos);
 
+    function GetPositions() {
+
+        document.getElementById("Height").value = stage.active.pos.h;
+        document.getElementById("width").value = stage.active.pos.w;
+        document.getElementById("Xposition").value = stage.active.pos.x;
+        document.getElementById("yposition").value = stage.active.pos.y;
+
+    }
+</script>
 
 {% endblock %}

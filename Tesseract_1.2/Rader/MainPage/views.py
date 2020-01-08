@@ -25,7 +25,8 @@ def Dashboard(request):
         upload_file = request.FILES['document']
         storefile = FileSystemStorage()
         filename = storefile.save(upload_file.name, upload_file)
-        return render(request, 'Dashboard.html',{'data':"File Uploaded Sucessfully", 'url' : filename})
+        filepath = 'media/' + filename
+        return render(request, 'Dashboard.html',{'data':"File Uploaded Sucessfully", 'url' : filename, 'path': filepath})
     elif(request.method=='POST' and 'GetText' in request.POST):
         imageName = request.POST.get("imagename")
         url = 'media/'+ imageName
